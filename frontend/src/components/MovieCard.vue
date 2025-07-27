@@ -70,7 +70,7 @@ export default {
     };
   },
   mounted() {
-    fetch("http://www.omdbapi.com/?i=tt3896198&apikey=d2132124")
+    fetch("https://www.omdbapi.com/?i=tt3896198&apikey=d2132124")
       .then((res) => res.json())
       .then((data) => {
         this.movie = data;
