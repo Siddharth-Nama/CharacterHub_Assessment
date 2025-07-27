@@ -5,5 +5,7 @@ from .models import Post
 from .serializers import PostSerializer
 
 class PostListView(generics.ListAPIView):
-    queryset = Post.objects.all().order_by('-timestamp')
     serializer_class = PostSerializer
+
+    def get_queryset(self):
+        return Post.objects.filter(user=self.request.user).order_by('-timestamp')
